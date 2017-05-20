@@ -23,7 +23,8 @@
   "homepage": "https://github.com/Fasand/youtube-monitor#readme",
   "dependencies": {
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-youtube": "^7.4.0"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",

@@ -1,9 +1,43 @@
-var React = require('react');
+import React from 'react';
+import YouTube from 'react-youtube';
 
-var App = React.createClass({
-    render: function () {
-        return <h1>Hello!</h1>;
-    }
-});
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      videoId: "YImhZQteBIY"
+    };
+  }
 
-module.exports = App;
+  componentDidMount() {
+    setTimeout(() => this.changeVideoId("dQw4w9WgXcQ"), 7000);
+  }
+
+  changeVideoId(newId) {
+    this.setState({
+      videoId: newId
+    });
+  }
+
+  render() {
+    const opts = {
+      height: '390',
+      width: '640',
+      playerVars: { // https://developers.google.com/youtube/player_parameters
+        autoplay: 1,
+        controls: 0
+      }
+    };
+
+    return (
+      <YouTube
+        videoId={this.state.videoId}
+        opts={opts}
+        onReady={this._onReady}
+      />
+    );
+
+  }
+}
+
+export default App;
