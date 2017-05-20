@@ -9526,7 +9526,7 @@ var App = React.createClass({
         return React.createElement(
             'h1',
             null,
-            'Hello world!'
+            'Hello!'
         );
     }
 });
