@@ -1,4 +1,5 @@
 import React from 'react';
+import Dashboard from '../components/Dashboard';
 
 class DashboardContainer extends React.Component {
 
@@ -7,7 +8,7 @@ class DashboardContainer extends React.Component {
   }
 
   render () {
-    return <h1>Dashboard</h1>;
+    return <Dashboard />;
   }
 
 }
