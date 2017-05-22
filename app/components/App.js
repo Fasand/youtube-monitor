@@ -1,25 +1,26 @@
 import React from 'react';
 import YouTube from 'react-youtube';
+import Welcome from './Welcome';
 
 class App extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.state = {
-      videoId: "YImhZQteBIY"
+      // videoId: "YImhZQteBIY"
     };
   }
 
-  componentDidMount() {
+  componentDidMount () {
     setTimeout(() => this.changeVideoId("dQw4w9WgXcQ"), 7000);
   }
 
-  changeVideoId(newId) {
+  changeVideoId (newId) {
     this.setState({
       videoId: newId
     });
   }
 
-  render() {
+  render () {
     const opts = {
       height: '390',
       width: '640',
@@ -29,13 +30,15 @@ class App extends React.Component {
       }
     };
 
-    return (
-      <YouTube
-        videoId={this.state.videoId}
-        opts={opts}
-        onReady={this._onReady}
-      />
-    );
+    return <Welcome />;
+
+    // return (
+    //   <YouTube
+    //     videoId={this.state.videoId}
+    //     opts={opts}
+    //     onReady={this._onReady}
+    //   />
+    // );
 
   }
 }
