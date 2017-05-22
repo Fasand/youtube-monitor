@@ -1,6 +1,6 @@
 import React from 'react';
 import YouTube from 'react-youtube';
-import Welcome from './Welcome';
+import WelcomeContainer from '../containers/WelcomeContainer';
 
 class App extends React.Component {
   constructor (props) {
@@ -30,7 +30,7 @@ class App extends React.Component {
       }
     };
 
-    return <Welcome />;
+    return <WelcomeContainer />;
 
     // return (
     //   <YouTube
