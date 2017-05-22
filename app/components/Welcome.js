@@ -6,7 +6,8 @@ class Welcome extends React.Component {
     super(props);
     this.state = {
       username: '',
-      channel: ''
+      channel: '',
+      api: ''
     };
 
     // Bind handlers to this
@@ -23,12 +24,16 @@ class Welcome extends React.Component {
       this.setState({
         channel: e.target.value
       });
+    } else if (e.target.id == 'api') {
+      this.setState({
+        api: e.target.value
+      })
     } else return;
   }
 
   handleSubmit (e) {
     e.preventDefault();
-    this.props.onSubmit(this.state.username, this.state.channel);
+    this.props.onSubmit(this.state.username, this.state.channel, this.state.api);
   }
 
   render () {
@@ -59,6 +64,19 @@ class Welcome extends React.Component {
                   id="channel"
                   placeholder="https://www.youtube.com/user/Username"
                   value={this.state.channel}
+                  onChange={this.handleChange}
+                />
+              </div>
+            </div>
+            <div className="form-group">
+              <label className="col-md-3 control-label" htmlFor="api">API key</label>
+              <div className="col-md-9">
+                <input
+                  type="text"
+                  className="form-control"
+                  id="api"
+                  placeholder="Your YouTube API key"
+                  value={this.state.api}
                   onChange={this.handleChange}
                 />
               </div>

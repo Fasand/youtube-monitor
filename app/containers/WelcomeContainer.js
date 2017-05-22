@@ -7,8 +7,8 @@ class WelcomeContainer extends React.Component {
     super(props);
   }
 
-  onSubmit (username, channel) {
-    console.log(username, channel);
+  onSubmit (username, channel, api) {
+    console.log(username, channel, api);
   }
 
   render () {
