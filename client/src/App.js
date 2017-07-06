@@ -1,24 +1,22 @@
 import React, { Component } from 'react';
+import WelcomeContainer from './containers/WelcomeContainer';
+import DashboardContainer from './containers/DashboardContainer';
 import './App.css';
 
 class App extends Component {
-  state = {users: []}
-
-  componentDidMount() {
-    fetch('/users')
-      .then(res => res.json())
-      .then(users => this.setState({ users }));
+  constructor (props) {
+    super(props);
+    this.state = {
+      isLoggedIn: false
+    };
   }
 
-  render() {
-    return (
-      <div className="App">
-        <h1>Users</h1>
-        {this.state.users.map(user =>
-          <div key={user.id}>{user.username}</div>
-        )}
-      </div>
-    );
+  render () {
+    if(!this.state.isLoggedIn) {
+      return <WelcomeContainer />;
+    } else {
+      return <DashboardContainer />;
+    }
   }
 }
 

@@ -3,10 +3,6 @@ import Welcome from '../components/Welcome';
 
 class WelcomeContainer extends React.Component {
 
-  constructor (props) {
-    super(props);
-  }
-
   onSubmit (username, channel, api) {
     console.log(username, channel, api);
   }

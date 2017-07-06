@@ -16,15 +16,15 @@ class Welcome extends React.Component {
   }
 
   handleChange (e) {
-    if (e.target.id == 'username') {
+    if (e.target.id === 'username') {
       this.setState({
         username: e.target.value
       });
-    } else if (e.target.id == 'channel') {
+    } else if (e.target.id === 'channel') {
       this.setState({
         channel: e.target.value
       });
-    } else if (e.target.id == 'api') {
+    } else if (e.target.id === 'api') {
       this.setState({
         api: e.target.value
       })
