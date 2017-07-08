@@ -1,5 +1,5 @@
 import React from 'react';
-import Welcome from '../components/Welcome';
+import Welcome from './Welcome';
 
 class WelcomeContainer extends React.Component {
 
