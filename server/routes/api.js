@@ -1,15 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/users', function(req, res, next) {
-  res.json([{
-    id: 1,
-    username: "fasand"
-  },
-  {
-    id: 2,
-    username: "yoyoyo"
-  }]);
+router.get('/issetup', function(req, res, next) {
+  res.json(false);
 });
 
 router.get('/videos', function(req, res, next) {

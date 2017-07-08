@@ -9,15 +9,28 @@ class App extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      isSetUp: false
+      isSetUp: undefined
     };
   }
 
+  componentDidMount () {
+    Axios.get('/api/issetup')
+      .then((response) => {
+        this.setState({ isSetUp: response.data });
+      });
+  }
+
   render () {
-    if(!this.state.isSetUp) {
-      return <WelcomeContainer />;
-    } else {
+    if(this.state.isSetUp === undefined) {
+      return (
+        <div>
+          <div className="loader"></div>
+        </div>
+      )
+    } else if(this.state.isSetUp === true) {
       return <ApplicationContainer />;
+    } else {
+      return <WelcomeContainer />;
     }
   }
 }

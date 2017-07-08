@@ -1,0 +1,30 @@
+.loader {
+  border: 10px solid #eee;
+  border-radius: 50%;
+  border-top: 10px solid #ccc;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 1.3s linear infinite, fadein 0.5s;
+  animation: spin 1.3s linear infinite, fadein 0.5s;
+  margin: 30% auto;
+}
+
+@-webkit-keyframes fadein {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadein {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
