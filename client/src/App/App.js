@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom'
+import Axios from 'axios';
+
 import WelcomeContainer from '../Welcome/WelcomeContainer';
 import ApplicationContainer from '../Application/ApplicationContainer';
 import './App.css';
