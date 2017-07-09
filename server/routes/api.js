@@ -1,5 +1,6 @@
 var express = require('express');
 var axios = require('axios');
+var jsonfile = require('jsonfile');
 var router = express.Router();
 
 router.get('/issetup', (req, res, next) => {
@@ -17,12 +18,23 @@ router.get('/checkcredentials', (req, res, next) => {
       res.json(false);
       next();
     }
+
   axios.get('https://www.googleapis.com/youtube/v3/channels'+
     '?part=contentDetails&id=UCK8sQmJBp8GCxrOtXWBpyEA&key='+key)
     .then((response) => {
       // Save the credentials somewhere
       console.log(username, channel, key);
-      res.json(true);
+      jsonfile.writeFile(__dirname+'/../config.js', {
+        username: username,
+        channel: channel,
+        key: key
+      }, (err) => {
+        if(err !== null) {
+          console.error(err);
+          res.json(false);
+        }
+        else res.json(true);
+      });
     })
     .catch((err) => {
       res.json(false);
