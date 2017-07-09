@@ -3,6 +3,16 @@ var axios = require('axios');
 var jsonfile = require('jsonfile');
 var router = express.Router();
 
+var CONFIG_FILE = __dirname + '/../config.js';
+
+function readConfig () {
+  return jsonfile.readFileSync(CONFIG_FILE);
+}
+
+function writeConfig (obj, callback) {
+  jsonfile.writeFile(CONFIG_FILE, obj, callback);
+}
+
 router.get('/issetup', (req, res, next) => {
   res.json(false);
 });
@@ -24,7 +34,7 @@ router.get('/checkcredentials', (req, res, next) => {
     .then((response) => {
       // Save the credentials somewhere
       console.log(username, channel, key);
-      jsonfile.writeFile(__dirname+'/../config.js', {
+      writeConfig({
         username: username,
         channel: channel,
         key: key
