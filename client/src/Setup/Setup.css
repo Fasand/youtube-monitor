@@ -1,0 +1,8 @@
+.setup-progress {
+  margin: 50px auto;
+  padding: 30px;
+  width: 800px;
+  background-color: #fafafa;
+  border: 5px dashed #ddd;
+  border-radius: 40px;
+}

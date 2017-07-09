@@ -3,7 +3,11 @@ import React from 'react';
 class Setup extends React.Component {
 
   render () {
-    return <h1>Setup</h1>;
+    return (
+      <div className="setup-progress">
+        <h1 className="text-center">Setup</h1>
+      </div>
+    )
   }
 
 }
