@@ -2,11 +2,7 @@ var express = require('express');
 var axios = require('axios');
 var router = express.Router();
 
-function checkCredentials(key) {
-
-}
-
-router.get('/issetup', function(req, res, next) {
+router.get('/issetup', (req, res, next) => {
   res.json(false);
 });
 
@@ -22,8 +18,8 @@ router.get('/checkapikey', (req, res, next) => {
     });
 });
 
-router.get('/videos', function(req, res, next) {
-  res.render('index', { title: 'Videos api' });
+router.get('/setup', (req, res, next) => {
+  res.json(false);
 });
 
 module.exports = router;

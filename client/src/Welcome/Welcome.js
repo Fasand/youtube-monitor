@@ -40,6 +40,9 @@ class Welcome extends React.Component {
     return (
       <div className="container">
         <h1 className="text-center" style={{marginTop: '10%'}}>Set up your account</h1>
+        <div className="alert alert-warning api-error">
+          The API key your provided is not valid.
+        </div>
         <form className="form-horizontal col-md-6 col-md-offset-3" style={{marginTop: '5%'}} onSubmit={this.handleSubmit}>
           <fieldset>
             <div className="form-group">

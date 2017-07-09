@@ -1,0 +1,6 @@
+.api-error {
+  margin: 0 auto 0 auto;
+  width: 500px;
+  opacity: 0;
+  transition: opacity 1s, margin 1s;
+}
