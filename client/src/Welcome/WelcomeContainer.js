@@ -6,7 +6,7 @@ class WelcomeContainer extends React.Component {
 
   onSubmit (username, channel, api) {
     console.log(username, channel, api);
-    Axios.get('/api/check?key='+api)
+    Axios.get(`/api/checkapikey?key=${api}`)
       .then((response) => {
         if(response.data === true) console.log("API key works.");
         else console.error("Bad API key.");

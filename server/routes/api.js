@@ -10,9 +10,9 @@ router.get('/issetup', function(req, res, next) {
   res.json(false);
 });
 
-router.get('/check', (req, res, next) => {
+router.get('/checkapikey', (req, res, next) => {
   axios.get('https://www.googleapis.com/youtube/v3/channels'+
-    '?part=snippet%2CcontentDetails&id=UCK8sQmJBp8GCxrOtXWBpyEA&key='+
+    '?part=contentDetails&id=UCK8sQmJBp8GCxrOtXWBpyEA&key='+
     req.query.key)
     .then((response) => {
       res.json(true);
