@@ -16,6 +16,7 @@ class WelcomeContainer extends React.Component {
       .then((response) => {
         if(response.data === true) {
           console.log("API key works.");
+          window.location = '/setup';
         } else {
           console.error("Bad API key.");
           // Animate warning alert using CSS transition
