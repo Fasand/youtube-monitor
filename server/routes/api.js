@@ -6,11 +6,22 @@ router.get('/issetup', (req, res, next) => {
   res.json(false);
 });
 
-router.get('/checkapikey', (req, res, next) => {
+router.get('/checkcredentials', (req, res, next) => {
+  var username = req.query.username;
+  var channel = req.query.channel;
+  var key = req.query.key;
+  // All fields must be filled in
+  if(username.length === 0 ||
+    channel.length === 0 ||
+    key.length === 0) {
+      res.json(false);
+      next();
+    }
   axios.get('https://www.googleapis.com/youtube/v3/channels'+
-    '?part=contentDetails&id=UCK8sQmJBp8GCxrOtXWBpyEA&key='+
-    req.query.key)
+    '?part=contentDetails&id=UCK8sQmJBp8GCxrOtXWBpyEA&key='+key)
     .then((response) => {
+      // Save the credentials somewhere
+      console.log(username, channel, key);
       res.json(true);
     })
     .catch((err) => {
